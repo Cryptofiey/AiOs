@@ -1,0 +1,18 @@
+{
+  "name": "sema-soul-combine",
+  "version": "1.0.1",
+  "description": "Dynamic Semantic Crystallization and Interceptor Engine for LLMs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

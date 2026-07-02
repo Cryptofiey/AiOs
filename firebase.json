@@ -1,0 +1,23 @@
+{
+  "firestore": [
+    {
+      "database": "ai-studio-semasoulcombiner-eb85d699-a986-4498-8e80-387d17e2edfc",
+      "rules": "firestore.rules"
+    }
+  ],
+  "hosting": {
+    "site": "fluted-mountain-sdckx",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

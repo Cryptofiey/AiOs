@@ -1,0 +1,158 @@
+[
+  {
+    "timestamp": "2026-07-02T10:11:10.936Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems (TonAPI) is offline!",
+    "stack": "Error: Adapter GetGems (TonAPI) is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T10:09:49.241Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems (TonAPI) is offline!",
+    "stack": "Error: Adapter GetGems (TonAPI) is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T10:06:22.621Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T10:04:03.865Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T10:01:50.714Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T06:23:20.408Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T06:20:45.687Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T06:20:10.875Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T06:19:47.766Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T06:15:32.941Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-02T06:14:44.311Z",
+    "context": "Adapter Verification",
+    "error": "Adapter GetGems is offline!",
+    "stack": "Error: Adapter GetGems is offline!\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:68:23)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:34:19.018Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:33:50.450Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:33:28.637Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:33:13.625Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:32:45.685Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:32:28.926Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)\n    at ChaosTester.start (/app/applet/src/lib/os-tester/ChaosTester.ts:34:10)\n    at Server.<anonymous> (/app/applet/server.ts:851:31)"
+  },
+  {
+    "timestamp": "2026-07-01T16:32:04.448Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:31:46.705Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:31:25.241Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:30:59.025Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:30:34.279Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:30:12.859Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:29:43.857Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:29:16.192Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)"
+  },
+  {
+    "timestamp": "2026-07-01T16:28:49.821Z",
+    "context": "MTProto Connection",
+    "error": "MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.",
+    "stack": "Error: MTProto is not connected. User needs to login via UI for the monkey tester to interact with Telegram bots.\n    at ChaosTester.performRandomAction (/app/applet/src/lib/os-tester/ChaosTester.ts:103:21)\n    at ChaosTester.loop (/app/applet/src/lib/os-tester/ChaosTester.ts:45:20)\n    at ChaosTester.start (/app/applet/src/lib/os-tester/ChaosTester.ts:34:10)\n    at Server.<anonymous> (/app/applet/server.ts:851:31)"
+  }
+]

@@ -1,0 +1,54 @@
+name: Publish Semantic Combine
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/lib/semantic-combine/**'
+  workflow_dispatch:
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Requires write access to push the version bump back
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Bump Version
+        working-directory: ./src/lib/semantic-combine
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          npm version patch -m "chore: auto-bump version to %s [skip ci]"
+
+      - name: Push Version Update
+        run: git push origin HEAD:main --follow-tags
+
+      - name: Install dependencies
+        working-directory: ./src/lib/semantic-combine
+        run: npm install
+
+      - name: Build Library
+        working-directory: ./src/lib/semantic-combine
+        run: npm run build
+
+      - name: Publish to NPM
+        working-directory: ./src/lib/semantic-combine
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
