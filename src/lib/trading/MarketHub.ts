@@ -140,7 +140,7 @@ export class MarketHub {
   private initSync() {
     console.log("[MarketHub] Initializing Firestore Market Sync...");
     
-    const marketCollection = collection(db, "market_data");
+    const marketCollection = collection(db, "agent_logs");
     
     onSnapshot(marketCollection, (snapshot) => {
       const ordersByItem: Map<string, NormalizedOrder[]> = new Map();
@@ -208,7 +208,7 @@ export class MarketHub {
       console.log(`[MarketHub] State updated. Sources: ${this.state.activeSources.join(", ")}, Global Floor: ${this.state.globalFloor}`);
       this.notify();
     }, (error) => {
-      console.warn("[MarketHub] Firestore onSnapshot failed for market_data collection:", error);
+      console.warn("[MarketHub] Firestore onSnapshot failed for agent_logs collection:", error);
     });
   }
 
@@ -217,7 +217,7 @@ export class MarketHub {
    */
   public async clearMarketData() {
     console.log("[MarketHub] Clearing market data...");
-    const marketCollection = collection(db, "market_data");
+    const marketCollection = collection(db, "agent_logs");
     const snapshot = await getDocs(marketCollection);
     for (const doc of snapshot.docs) {
       await deleteDoc(doc.ref);

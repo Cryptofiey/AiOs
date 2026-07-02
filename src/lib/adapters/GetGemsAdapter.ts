@@ -2,10 +2,10 @@ import { MarketAdapter } from "./types";
 import { NormalizedOrder } from "../../types/market";
 
 const TONAPI_ENDPOINT = "https://tonapi.io/v2/nfts/collections";
-const TELEGRAM_GIFTS_COLLECTION_ADDRESS = "EQCGbGpnDZJpAiyK9j6N_Vn8yP-fJzB-hE2-j8s9R7e2qVbH"; // Using TonAPI valid address format
+const TELEGRAM_GIFTS_COLLECTION_ADDRESS = "EQA-GKyRq-hyXCw0B0oDwANpASq9ql4FQ1pOMRQG81SQ-H4R"; // Using TonAPI valid address format
 
 export class GetGemsAdapter implements MarketAdapter {
-  public readonly name = "GetGems (TonAPI)";
+  public readonly name = "GetGems";
   private collectionAddress = TELEGRAM_GIFTS_COLLECTION_ADDRESS;
   private isOnline = true;
   private lastPolled = new Date().toISOString();

@@ -21,28 +21,30 @@ export function useOpportunities() {
     if (!db) return;
     
     const q = query(
-      collection(db, 'arbitrage_opportunities'),
-      orderBy('timestamp', 'desc'),
-      limit(20)
+      collection(db, 'agent_logs')
     );
     
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const opps: UIArbitrageOpportunity[] = [];
       snapshot.forEach(doc => {
         const data = doc.data();
-        opps.push({
-          id: doc.id,
-          itemName: data.itemName,
-          group: data.group,
-          buyPrice: data.buyPrice,
-          expectedSellPrice: data.expectedSellPrice,
-          expectedProfit: data.expectedProfit,
-          action: data.action,
-          source: data.sourceAdapter || data.source || 'GetGems',
-          timestamp: data.timestamp || Date.now()
-        });
+        if (data.type === 'OPPORTUNITY' || doc.id.startsWith('opp_')) {
+          opps.push({
+            id: doc.id,
+            itemName: data.itemName,
+            group: data.group,
+            buyPrice: data.buyPrice,
+            expectedSellPrice: data.expectedSellPrice,
+            expectedProfit: data.expectedProfit,
+            action: data.action,
+            source: data.sourceAdapter || data.source || 'GetGems',
+            timestamp: data.timestamp || Date.now()
+          });
+        }
       });
-      setOpportunities(opps);
+      // Sort in memory instead of Firestore index
+      opps.sort((a, b) => b.timestamp - a.timestamp);
+      setOpportunities(opps.slice(0, 20));
     });
 
     return () => unsubscribe();

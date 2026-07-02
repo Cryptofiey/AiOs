@@ -32,7 +32,7 @@ service cloud.firestore {
 
     match /market_data/{docId} {
       allow read: if true;
-      allow write: if isSignedIn();
+      allow write: if true;
     }
 
     match /arbitrage_opportunities/{docId} {

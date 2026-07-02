@@ -833,8 +833,25 @@ async function startServer() {
     console.log(`[Trading Bot Server] Active on port ${PORT}`);
     
     // Start atomic background workers for the Market Engine
+    const { db: clientDb, auth } = await import("./src/lib/firebase");
+    const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = await import("firebase/auth");
+    try {
+      await signInWithEmailAndPassword(auth, "server@local.com", "password123");
+      console.log("[ServerMarketEngine] Authenticated with email for DB writes");
+    } catch (e: any) {
+      if (e.code === 'auth/user-not-found' || e.code === 'auth/invalid-credential') {
+        try {
+          await createUserWithEmailAndPassword(auth, "server@local.com", "password123");
+          console.log("[ServerMarketEngine] Created server user and authenticated");
+        } catch (err: any) {
+          console.warn("[ServerMarketEngine] Failed to create server user:", err.message);
+        }
+      } else {
+        console.warn("[ServerMarketEngine] Auth failed:", e.message);
+      }
+    }
     const marketEngine = ServerMarketEngine.getInstance();
-    marketEngine.setDb(db);
+    marketEngine.setDb(clientDb);
     marketEngine.preloadHistoricalData();
     marketEngine.startNetworkHarnessWorker();
     marketEngine.startFragmentWorker();

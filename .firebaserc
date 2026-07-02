@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "fluted-mountain-sdckx"
+  },
+  "targets": {
+    "fluted-mountain-sdckx": {
+      "firestore": {
+        "ai-studio-semasoulcombiner-eb85d699-a986-4498-8e80-387d17e2edfc": [
+          "ai-studio-semasoulcombiner-eb85d699-a986-4498-8e80-387d17e2edfc"
+        ]
+      }
+    }
   }
 }

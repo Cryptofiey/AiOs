@@ -106,13 +106,15 @@ export class ServerMarketEngine {
 
   private async syncToFirestore(tick: ServerTick) {
     try {
-      const docRef = this.db.collection("market_data").doc(tick.id);
-      await docRef.set({
+      if (!this.db) return;
+      const { doc, setDoc } = await import("firebase/firestore");
+      const docRef = doc(this.db, "agent_logs", `market_${tick.id}`);
+      await setDoc(docRef, {
         ...tick,
         metadata: { itemName: tick.itemName }
       });
-    } catch (e) {
-      // Ignore gracefully
+    } catch (e: any) {
+      console.error("[ServerMarketEngine] Sync to Firestore failed:", e.message);
     }
   }
 
@@ -134,14 +136,17 @@ export class ServerMarketEngine {
         if (this.db) {
           try {
             const oppId = `opp_${itemName.replace(/[^a-zA-Z0-9]/g, '_')}`;
-            await this.db.collection("arbitrage_opportunities").doc(oppId).set({
+            const { doc, setDoc, serverTimestamp } = await import("firebase/firestore");
+            await setDoc(doc(this.db, "agent_logs", oppId), {
+              type: "OPPORTUNITY",
               ...opportunity,
-              timestamp: FieldValue.serverTimestamp(),
+              itemName,
+              timestamp: Date.now(), // Use standard TS instead of serverTimestamp for simplicity
               sourceId: bestAsk.id,
               sourceAdapter: bestAsk.source
             });
-          } catch (e) {
-            console.error("[ServerMarketEngine] Failed to sync opportunity:", e);
+          } catch (e: any) {
+            console.error("[ServerMarketEngine] Failed to sync opportunity:", e.message);
           }
         }
         
