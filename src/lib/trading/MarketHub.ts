@@ -147,11 +147,12 @@ export class MarketHub {
       const sources: Set<string> = new Set();
       let globalMin = Infinity;
       const now = Date.now();
-      const TRUSTED = ["Fragment", "MRKT", "Tonapi", "MTProto Bridge", "GetGems", "Thermos", "PriceNFTbot"];
+      const TRUSTED = ["Fragment", "MRKT", "Tonapi", "MTProto Bridge", "GetGems", "Thermos", "PriceNFTbot", "DeDust/StonFi", "Tonnel"];
       const MAX_AGE = 5 * 60 * 1000;
 
       // Merge with existing items to preserve in-memory pushTick data
       snapshot.docs.forEach(doc => {
+        if (!doc.id.startsWith("market_")) return;
         const data = doc.data() as NormalizedOrder;
         
         // Scrubbing logic: filter out untrusted or stale records at the entry point
