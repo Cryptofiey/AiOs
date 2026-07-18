@@ -51,6 +51,7 @@ function getDb() {
 }
 
 async function initializeServices() {
+  let fsDb: any = null;
   try {
     const configPath = path.join(process.cwd(), 'firebase-applet-config.json');
     if (fs.existsSync(configPath)) {
@@ -112,7 +113,7 @@ async function initializeServices() {
       // CRITICAL: Fallback to local storage if Firebase is failing
       // We'll use a FileSystemFirestore for real durability in this environment
       const { FileSystemFirestore } = await import("./src/lib/storage-fallback");
-      const fsDb = new FileSystemFirestore();
+      fsDb = new FileSystemFirestore();
       console.log("[Storage] Using FileSystemFirestore for operational durability.");
       
       // Inject the local or real DB into engines
@@ -122,22 +123,14 @@ async function initializeServices() {
       const marketHubInstance = MarketHub.getInstance();
 
       if (adminDb) {
-        marketEngineInstance.setDb(adminDb);
-        executionEngineInstance.setDb(adminDb);
         authAgentInstance.setDb(adminDb);
-        marketHubInstance.setPersistence(adminDb);
       } else {
-        marketEngineInstance.setDb(fsDb);
-        executionEngineInstance.setDb(fsDb);
         authAgentInstance.setDb(fsDb);
-        marketHubInstance.setPersistence(fsDb);
       }
       
-      // Check if we should override to local storage due to permission errors
-      // (In this environment, we currently always override for reliability)
+      // Check if we should override high-frequency scraping engines to local storage due to permission / quota errors
       marketEngineInstance.setDb(fsDb);
       executionEngineInstance.setDb(fsDb);
-      authAgentInstance.setDb(fsDb);
       marketHubInstance.setPersistence(fsDb);
 
     } else {
@@ -173,12 +166,19 @@ async function initializeServices() {
     }
   } else {
     // If db exists (default or from config), ensure it's propagated if not already
+    // Keep high-frequency scraper engines on local file system fallback to respect write quotas
+    let localFsDb = fsDb;
+    if (!localFsDb) {
+      const { FileSystemFirestore } = await import("./src/lib/storage-fallback");
+      localFsDb = new FileSystemFirestore();
+    }
+    
     ServerLogger.getInstance().setDb(getDb());
-    ExecutionEngine.getInstance().setDb(getDb());
+    ExecutionEngine.getInstance().setDb(localFsDb);
     AuthAgent.getInstance().setDb(getDb());
-    MarketHub.getInstance().setPersistence(getDb());
+    MarketHub.getInstance().setPersistence(localFsDb);
     if (typeof ServerMarketEngine !== "undefined") {
-      ServerMarketEngine.getInstance().setDb(getDb());
+      ServerMarketEngine.getInstance().setDb(localFsDb);
     }
   }
 }
