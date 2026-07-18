@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "MarketOrder": {
+      "title": "Market Order",
+      "description": "Normalized order from various sources (Fragment, Tonnel, etc)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "price": { "type": "number" },
+        "currency": { "type": "string", "enum": ["TON", "USD"] },
+        "source": { "type": "string" },
+        "type": { "type": "string", "enum": ["ASK", "BID"] },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "price", "source", "type", "timestamp"]
+    },
+    "ExecutionLog": {
+      "title": "Execution Log",
+      "description": "Log of a specific trade execution",
+      "type": "object",
+      "properties": {
+        "itemId": { "type": "string" },
+        "itemName": { "type": "string" },
+        "price": { "type": "number" },
+        "method": { "type": "string" },
+        "source": { "type": "string" },
+        "status": { "type": "string" },
+        "txHash": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "error": { "type": "string" }
+      },
+      "required": ["itemId", "price", "status", "timestamp"]
+    },
+    "SniperSettings": {
+      "title": "Sniper Settings",
+      "description": "User configuration for the sniper bot",
+      "type": "object",
+      "properties": {
+        "isAutoTrading": { "type": "boolean" },
+        "maxSlippage": { "type": "number" },
+        "keepInInventory": { "type": "boolean" },
+        "followedWhales": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "firestore": {
+    "/market/{itemId}/orders/{orderId}": {
+      "schema": "MarketOrder",
+      "description": "Real-time order books aggregated from all markets"
+    },
+    "/executions/{executionId}": {
+      "schema": "ExecutionLog",
+      "description": "History of all trades executed by the sniper"
+    },
+    "/execution_queue/{queueId}": {
+      "schema": "ExecutionLog",
+      "description": "Queue of items identified as buy/sell opportunities"
+    },
+    "/settings/{userId}": {
+      "schema": "SniperSettings",
+      "description": "User-specific sniper configuration"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "fragment_icecream-141770",
+  "source": "Fragment",
+  "price": 4,
+  "currency": "TON",
+  "type": "ASK",
+  "category": "AUCTION",
+  "timestamp": "2026-07-18T13:17:03.453Z",
+  "metadata": {
+    "itemName": "Ice Cream",
+    "processedAt": "2026-07-18T13:17:03.459Z"
+  }
+}

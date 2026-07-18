@@ -1,0 +1,13 @@
+{
+  "id": "fragment_snakebox-46306",
+  "source": "Fragment",
+  "price": 3,
+  "currency": "TON",
+  "type": "ASK",
+  "category": "AUCTION",
+  "timestamp": "2026-07-18T13:15:03.410Z",
+  "metadata": {
+    "itemName": "Snake Box",
+    "processedAt": "2026-07-18T13:15:03.415Z"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "fragment_homemadecake-124080",
+  "source": "Fragment",
+  "price": 3,
+  "currency": "TON",
+  "type": "ASK",
+  "category": "AUCTION",
+  "timestamp": "2026-07-18T11:58:27.275Z",
+  "metadata": {
+    "itemName": "Homemade Cake",
+    "processedAt": "2026-07-18T11:58:27.285Z"
+  }
+}

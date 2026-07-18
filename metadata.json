@@ -1,0 +1,8 @@
+{
+  "name": "Sema Soul: Inventory Helper & Sniper",
+  "description": "Professional trading terminal for Telegram Gifts. Automated sniping, inventory management with pattern analysis, and market monitoring powered by Nvidia AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
