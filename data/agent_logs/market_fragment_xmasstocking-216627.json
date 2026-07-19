@@ -1,13 +1,13 @@
 {
-  "id": "fragment_instantramen-86955",
+  "id": "fragment_xmasstocking-216627",
   "source": "Fragment",
   "price": 3,
   "currency": "TON",
   "type": "ASK",
-  "category": "AUCTION",
-  "timestamp": "2026-07-19T10:54:28.332Z",
+  "category": "MARKET",
+  "timestamp": "2026-07-19T10:54:28.331Z",
   "metadata": {
-    "itemName": "Instant Ramen",
+    "itemName": "Xmas Stocking",
     "processedAt": "2026-07-19T10:54:28.335Z"
   }
 }

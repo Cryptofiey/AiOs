@@ -1,13 +1,13 @@
 {
-  "id": "fragment_vicecream-146503",
+  "id": "fragment_freshsocks-154376",
   "source": "Fragment",
-  "price": 3,
+  "price": 4,
   "currency": "TON",
   "type": "ASK",
   "category": "AUCTION",
   "timestamp": "2026-07-19T10:54:28.332Z",
   "metadata": {
-    "itemName": "Vice Cream",
+    "itemName": "Fresh Socks",
     "processedAt": "2026-07-19T10:54:28.337Z"
   }
 }

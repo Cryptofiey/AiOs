@@ -14,7 +14,7 @@ export class PortalsAdapter implements MarketAdapter {
     this.lastPolled = new Date().toISOString();
     try {
       const authAgent = AuthAgent.getInstance();
-      const token = await authAgent.getToken("PORTALS_AUTH");
+      const token = authAgent.getCredential("PORTALS_AUTH");
       
       if (!token) {
         this.isOnline = false;

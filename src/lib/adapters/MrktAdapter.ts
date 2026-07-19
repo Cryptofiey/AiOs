@@ -21,7 +21,7 @@ export class MrktAdapter implements MarketAdapter {
     const status = this.bridge.getSessionStatus();
     if (!status || status.status !== "connected") {
         this.isOnline = false;
-        console.warn(`[${this.name}Adapter] MTProtoBridge not connected. Cannot fetch from ${botName}`);
+        console.warn(`[${this.name}Adapter] MTProtoBridge not connected. Cannot fetch from @main_mrkt_bot`);
         return [];
     }
     
@@ -45,7 +45,7 @@ export class MrktAdapter implements MarketAdapter {
         }
     } catch (e: any) {
         this.isOnline = false;
-        console.error(`[${this.name}Adapter] Error fetching from ${botName}:`, e.message);
+        console.error(`[${this.name}Adapter] Error fetching from @main_mrkt_bot:`, e.message);
     }
     return allResults;
   }
